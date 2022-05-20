@@ -8,9 +8,10 @@ $dbpasswordEnc = password_hash($dbpassword, PASSWORD_DEFAULT); // PASSWRORD_DEFA
 
 // checking if recieved input fields corespond with database
 
-$username = $_POST['user'];
+$username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+
 
 
 if($dbusername === $username AND $dbemail === $email AND password_verify($password, $dbpasswordEnc)) 

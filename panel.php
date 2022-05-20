@@ -1,3 +1,15 @@
+<?php 
+  session_start();
+
+  if(!isset($_SESSION['user'])) {
+    header("Location: index.php");
+  } else {
+   $user = $_SESSION["user"];
+   $email = $_SESSION["email"];
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +25,8 @@
   </style>
 </head>
 <body>
-  <h1>Hello <span>Sefi</span>, you are now logged in to your panel</h1>
-  <p>you're email is <span>email</span></p>
+  <h1>Hello <span><?php echo $user; ?></span>, you are now logged in to your panel</h1>
+  <p>you're email is <span><?php echo $email;?></span></p>
   <button>Log out</button>
 </body>
 </html>
