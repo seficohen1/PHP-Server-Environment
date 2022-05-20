@@ -1,3 +1,15 @@
+<?php 
+
+
+if(isset($_GET['denied'])) {
+  $denied = 1;
+}
+if (isset($_GET['logout'])) {
+  $logout = 1;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +45,18 @@
         </div>
       </div>
     </form>
+    <?php 
+      if ($logout) {
+        echo '<div class="alert alert-success" role="alert">
+                You have logged out successfuly
+        </div>';
+      } elseif($denied) {
+        echo '<div class="alert alert-danger" role="alert">
+        Access Denied!
+        </div>';
+      }
+    ?>
+
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>

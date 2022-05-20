@@ -13,7 +13,6 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 
-
 if($dbusername === $username AND $dbemail === $email AND password_verify($password, $dbpasswordEnc)) 
 {
   session_start();
@@ -22,6 +21,7 @@ if($dbusername === $username AND $dbemail === $email AND password_verify($passwo
   header('Location: panel.php');
 
 } else {
-  echo "you can't log in";
+  // header("Location: index.php");
+  header('Location:index.php?denied=1');
 }
 
