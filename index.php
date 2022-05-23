@@ -1,6 +1,5 @@
 <?php 
 
-
 if(isset($_GET['denied'])) {
   $denied = 1;
 }
@@ -20,7 +19,8 @@ if (isset($_GET['logout'])) {
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
-    <form role="form" method="post" action="validate.php">
+  <div class="container">
+  <form role="form" method="post" action="validate.php">
       <div class="form-group row">
         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
@@ -56,6 +56,8 @@ if (isset($_GET['logout'])) {
         </div>';
       }
     ?>
+  </div>
+    
 
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
